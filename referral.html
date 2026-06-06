@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make a Referral | One Support Disability</title>
+  <meta name="description" content="Refer yourself, a family member or a client to One Support Disability. Quick and easy NDIS referral form for participants, families, carers and support coordinators in Melbourne.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="referral">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Referrals</span></nav>
+        <h1>Make a referral</h1>
+        <p>Referring yourself, a loved one or a client is simple. Fill in the form below and our team will be in touch within one business day.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- FORM -->
+          <div class="reveal">
+            <h2>Referral form</h2>
+            <p style="color:var(--muted);margin-bottom:1.5rem">Fields marked <span class="req">*</span> are required. Everything else helps us prepare, but is optional.</p>
+            <form class="form js-form" aria-label="Referral form">
+              <h3 style="margin-bottom:.2rem">Your details</h3>
+              <div class="row">
+                <div class="field"><label for="r-name">Your name <span class="req">*</span></label><input id="r-name" name="ref_name" type="text" required><span class="error">Please enter your name.</span></div>
+                <div class="field"><label for="r-email">Your email <span class="req">*</span></label><input id="r-email" name="ref_email" type="email" required><span class="error">Please enter a valid email.</span></div>
+              </div>
+              <div class="row">
+                <div class="field"><label for="r-phone">Your phone</label><input id="r-phone" name="ref_phone" type="tel"></div>
+                <div class="field"><label for="r-rel">You are the…</label>
+                  <select id="r-rel" name="relationship">
+                    <option value="">Select…</option>
+                    <option>Participant (referring myself)</option>
+                    <option>Family member or carer</option>
+                    <option>Support coordinator</option>
+                    <option>Health professional</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <h3 style="margin:.6rem 0 .2rem">Participant details</h3>
+              <div class="row">
+                <div class="field"><label for="p-name">Participant name <span class="req">*</span></label><input id="p-name" name="participant_name" type="text" required><span class="error">Please enter the participant's name.</span></div>
+                <div class="field"><label for="p-contact">Participant phone / email</label><input id="p-contact" name="participant_contact" type="text"></div>
+              </div>
+              <div class="row">
+                <div class="field"><label for="p-ndis">NDIS number (if known)</label><input id="p-ndis" name="ndis_number" type="text"></div>
+                <div class="field"><label for="p-mgmt">Plan management</label>
+                  <select id="p-mgmt" name="plan_management">
+                    <option value="">Select…</option>
+                    <option>Agency-managed</option>
+                    <option>Plan-managed</option>
+                    <option>Self-managed</option>
+                    <option>Not sure</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field"><label for="p-service">Support required</label>
+                <select id="p-service" name="service">
+                  <option value="">Select a service…</option>
+                  <option>Daily Living &amp; Personal Care</option>
+                  <option>Supported Independent Living</option>
+                  <option>Community Participation</option>
+                  <option>Transport &amp; Travel</option>
+                  <option>Multiple / not sure yet</option>
+                </select>
+              </div>
+              <div class="field"><label for="r-msg">Tell us about the support needed <span class="req">*</span></label><textarea id="r-msg" name="message" required></textarea><span class="error">Please add a few details.</span></div>
+              <p class="form__note">By submitting, you confirm you have the participant's consent to share their information. See our <a href="privacy.html">Privacy Policy</a>.</p>
+              <button class="btn btn--accent btn--lg" type="submit">Submit referral
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <div class="form-success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><strong>Referral received!</strong> (demo) Thank you — our intake team will be in touch within one business day.</div></div>
+            </form>
+          </div>
+
+          <!-- SIDEBAR -->
+          <div class="reveal">
+            <div class="card" style="background:var(--alice);border:none">
+              <h3>Who can refer?</h3>
+              <ul class="ticks mt-1">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Participants (self-referral)</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Family members &amp; carers</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Support coordinators</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Health &amp; allied professionals</li>
+              </ul>
+            </div>
+            <h3 style="margin:1.8rem 0 1rem">What happens next?</h3>
+            <div class="steps" style="grid-template-columns:1fr;gap:1rem">
+              <div class="step"><div class="step__num"></div><h3>We review your referral</h3><p>Our intake team checks the details and confirms we're the right fit.</p></div>
+              <div class="step"><div class="step__num"></div><h3>We get in touch</h3><p>We'll call or email within one business day to discuss next steps.</p></div>
+              <div class="step"><div class="step__num"></div><h3>We tailor a plan</h3><p>Together we design supports and match the right workers.</p></div>
+            </div>
+            <p class="mt-2" style="color:var(--muted)">Prefer to talk first? Email <a href="mailto:support@onesupportdisability.com.au">support@onesupportdisability.com.au</a>.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
