@@ -160,6 +160,8 @@ strong { color: var(--navy); font-weight: 600; }
 .a11y button:hover { background: rgba(255,255,255,.15); }
 .a11y button.is-active { background: var(--green); color: var(--navy); border-color: var(--green); }
 @media (max-width: 760px){ .topbar__contact .label { display: none; } }
+/* Hide the top utility bar on mobile for a cleaner header (kept on desktop) */
+@media (max-width: 768px){ .topbar { display: none; } }
 
 /* ---------- Header / Nav ---------- */
 .site-header { position: sticky; top: 0; z-index: 100; background: #fff; box-shadow: 0 1px 0 var(--line); transition: box-shadow .25s; }

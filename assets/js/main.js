@@ -1,5 +1,5 @@
 /* =====================================================================
-   One Support Disability — site behaviour
+   One Support Disability - site behaviour
    Injects shared header + footer, handles nav, accessibility tools,
    accordions, scroll reveal and form validation.
    Edit the NAV array or the footer template below to change them
@@ -157,7 +157,7 @@
           "<li>" + I.mail + '<a href="mailto:' + SITE.email + '">' + SITE.email + "</a></li>" +
           "<li>" + I.phone + '<a href="tel:' + SITE.phone.replace(/\s/g, "") + '">' + SITE.phone + " <em style=\"font-style:normal;color:#7fa1b8\">(sample)</em></a></li>" +
           "<li>" + I.pin + "<span>" + SITE.address + "</span></li>" +
-          "<li>" + I.clock + "<span>Mon&ndash;Fri, 9am&ndash;5pm</span></li>" +
+          "<li>" + I.clock + "<span>Mon-Fri, 9am-5pm</span></li>" +
         "</ul></div>" +
       "</div>" +
       '<div class="footer__bottom">' +
@@ -270,7 +270,7 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ---- Form validation (no backend — demo submit) ---- */
+  /* ---- Form validation (no backend - demo submit) ---- */
   document.querySelectorAll("form.js-form").forEach(function (form) {
     form.setAttribute("novalidate", "");
     form.addEventListener("submit", function (e) {
