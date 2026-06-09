@@ -10,7 +10,7 @@
 
   /* ---- Shared contact details (change once, updates everywhere) ---- */
   var SITE = {
-    email: "support@onesupportdisability.com.au",
+    email: "info@onesupportdisability.com.au",
     phone: "0493 341 909",                                   // mobile
     abn: "54 680 063 432",                                    // ABN
     area: "Melbourne & Greater Victoria"
@@ -268,7 +268,7 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  /* ---- Form validation (no backend - demo submit) ---- */
+  /* ---- Form validation (front-end only; connect a backend to receive submissions) ---- */
   document.querySelectorAll("form.js-form").forEach(function (form) {
     form.setAttribute("novalidate", "");
     form.addEventListener("submit", function (e) {
