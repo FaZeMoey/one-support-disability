@@ -16,4 +16,4 @@ python3 -m http.server 8000
 ## Notes
 - Header & footer are shared and injected from `assets/js/main.js` (edit the `NAV` array and the `SITE` contact details there to update site-wide).
 - Forms are front-end only (demo) — connect to your email or a service like Formspree to go live.
-- Phone, address and ABN are sample placeholders; the email is live.
+- Phone, ABN and email are live; no street address is shown (none provided).

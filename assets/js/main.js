@@ -12,7 +12,6 @@
   var SITE = {
     email: "support@onesupportdisability.com.au",
     phone: "0493 341 909",                                   // mobile
-    address: "Suite 5, 123 Sample Street, Melbourne VIC 3000", // sample address
     abn: "54 680 063 432",                                    // ABN
     area: "Melbourne & Greater Victoria"
   };
@@ -156,7 +155,6 @@
         '<div class="footer__contact"><h4>Get in touch</h4><ul>' +
           "<li>" + I.mail + '<a href="mailto:' + SITE.email + '">' + SITE.email + "</a></li>" +
           "<li>" + I.phone + '<a href="tel:' + SITE.phone.replace(/\s/g, "") + '">' + SITE.phone + "</a></li>" +
-          "<li>" + I.pin + "<span>" + SITE.address + "</span></li>" +
           "<li>" + I.clock + "<span>Mon-Fri, 9am-5pm</span></li>" +
         "</ul></div>" +
       "</div>" +
