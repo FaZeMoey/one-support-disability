@@ -11,9 +11,9 @@
   /* ---- Shared contact details (change once, updates everywhere) ---- */
   var SITE = {
     email: "support@onesupportdisability.com.au",
-    phone: "1300 123 456",                                   // sample number
+    phone: "0493 341 909",                                   // mobile
     address: "Suite 5, 123 Sample Street, Melbourne VIC 3000", // sample address
-    abn: "00 000 000 000",                                    // sample ABN
+    abn: "54 680 063 432",                                    // ABN
     area: "Melbourne & Greater Victoria"
   };
 
@@ -155,13 +155,13 @@
         '<div><h4>Services</h4><ul>' + svcLinks + "</ul></div>" +
         '<div class="footer__contact"><h4>Get in touch</h4><ul>' +
           "<li>" + I.mail + '<a href="mailto:' + SITE.email + '">' + SITE.email + "</a></li>" +
-          "<li>" + I.phone + '<a href="tel:' + SITE.phone.replace(/\s/g, "") + '">' + SITE.phone + " <em style=\"font-style:normal;color:#7fa1b8\">(sample)</em></a></li>" +
+          "<li>" + I.phone + '<a href="tel:' + SITE.phone.replace(/\s/g, "") + '">' + SITE.phone + "</a></li>" +
           "<li>" + I.pin + "<span>" + SITE.address + "</span></li>" +
           "<li>" + I.clock + "<span>Mon-Fri, 9am-5pm</span></li>" +
         "</ul></div>" +
       "</div>" +
       '<div class="footer__bottom">' +
-        "<div>&copy; <span id=\"yr\"></span> One Support Disability. ABN " + SITE.abn + " <em style=\"font-style:normal;color:#6f8aa0\">(sample)</em>. All rights reserved.</div>" +
+        "<div>&copy; <span id=\"yr\"></span> One Support Disability. ABN " + SITE.abn + ". All rights reserved.</div>" +
         '<div class="links">' +
           '<a href="accessibility.html">Accessibility</a>' +
           '<a href="privacy.html">Privacy Policy</a>' +
