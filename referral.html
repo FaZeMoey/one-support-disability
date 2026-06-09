@@ -32,7 +32,11 @@
           <div class="reveal">
             <h2>Referral form</h2>
             <p style="color:var(--muted);margin-bottom:1.5rem">Fields marked <span class="req">*</span> are required. Everything else helps us prepare, but is optional.</p>
-            <form class="form js-form" aria-label="Referral form">
+            <form class="form js-form" action="https://formsubmit.co/ajax/info@onesupportdisability.com.au" method="POST" aria-label="Referral form">
+              <input type="hidden" name="_subject" value="New referral - One Support Disability website">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
               <h3 style="margin-bottom:.2rem">Your details</h3>
               <div class="row">
                 <div class="field"><label for="r-name">Your name <span class="req">*</span></label><input id="r-name" name="ref_name" type="text" required><span class="error">Please enter your name.</span></div>

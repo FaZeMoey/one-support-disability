@@ -47,41 +47,6 @@
 
   var page = document.body.getAttribute("data-page") || "home";
 
-  /* ---- Entry welcome modal (shows once per browser session) ---- */
-  (function entryModal() {
-    var KEY = "osd-entry-ack";
-    try { if (sessionStorage.getItem(KEY) === "1") return; } catch (e) {}
-    var overlay = document.createElement("div");
-    overlay.className = "entry-modal";
-    overlay.setAttribute("role", "dialog");
-    overlay.setAttribute("aria-modal", "true");
-    overlay.setAttribute("aria-labelledby", "entryTitle");
-    overlay.innerHTML =
-      '<div class="entry-modal__card">' +
-        '<img class="entry-modal__logo" src="assets/images/logo.jpg" alt="One Support Disability">' +
-        '<span class="entry-modal__badge">🤖 Moe’s AI Assistant</span>' +
-        '<h2 id="entryTitle" class="entry-modal__title">Hey Sajad 👋</h2>' +
-        '<p class="entry-modal__text">This is Moe’s AI Assistant. Don’t call me dumb next time.</p>' +
-        '<button type="button" class="btn btn--accent btn--lg entry-modal__ok">OK</button>' +
-      "</div>";
-    document.body.appendChild(overlay);
-    document.body.style.overflow = "hidden";
-    var ok = overlay.querySelector(".entry-modal__ok");
-    setTimeout(function () { ok.focus(); }, 50);
-    function close() {
-      try { sessionStorage.setItem(KEY, "1"); } catch (e) {}
-      overlay.classList.add("is-closing");
-      document.body.style.overflow = "";
-      setTimeout(function () { overlay.remove(); }, 220);
-    }
-    ok.addEventListener("click", close);
-    // Must press OK: keep focus trapped on the button; Enter/Space confirm.
-    overlay.addEventListener("keydown", function (e) {
-      if (e.key === "Tab") { e.preventDefault(); ok.focus(); }
-      if (e.key === "Enter") { e.preventDefault(); close(); }
-    });
-  })();
-
   /* ---- Build header ---- */
   function buildHeader() {
     var items = NAV.map(function (n) {
@@ -283,9 +248,31 @@
         if (!valid) ok = false;
       });
       if (!ok) return;
+
       var success = form.querySelector(".form-success");
-      form.querySelectorAll(".field, .form__note, button[type=submit]").forEach(function (el) { el.style.display = "none"; });
-      if (success) { success.classList.add("show"); success.setAttribute("role", "status"); success.scrollIntoView({ behavior: "smooth", block: "center" }); }
+      function showSuccess() {
+        form.querySelectorAll(".field, .form__note, button[type=submit], h3").forEach(function (el) { el.style.display = "none"; });
+        if (success) { success.classList.add("show"); success.setAttribute("role", "status"); success.scrollIntoView({ behavior: "smooth", block: "center" }); }
+      }
+
+      var action = form.getAttribute("action");
+      if (!action) { showSuccess(); return; }
+
+      var btn = form.querySelector("button[type=submit]");
+      var original = btn ? btn.innerHTML : "";
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+
+      // URL-encode the fields (skips any file input) and POST to the form's endpoint
+      var data = new URLSearchParams();
+      new FormData(form).forEach(function (value, key) { if (typeof value === "string") data.append(key, value); });
+
+      fetch(action, { method: "POST", body: data, headers: { "Accept": "application/json" } })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json().catch(function () { return {}; }); })
+        .then(function () { showSuccess(); })
+        .catch(function () {
+          if (btn) { btn.disabled = false; btn.innerHTML = original; }
+          alert("Sorry, we couldn't send your message just now. Please email info@onesupportdisability.com.au and we'll help right away.");
+        });
     });
     form.querySelectorAll("input, select, textarea").forEach(function (input) {
       input.addEventListener("input", function () {
